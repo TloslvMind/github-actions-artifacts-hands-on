@@ -21,15 +21,12 @@ jobs:
   
   download:
     needs: build
-
     runs-on: ubuntu-latest
-
     steps:
-      - name: Download an artifact
+      - name: Download text file
         uses: actions/download-artifact@v4
         with:
           name: hello-artifact
-          path: ./artifacts/
-      
-      - name: Display the artifact's content
+          path: ./artifacts
+      - name: Display content of the text file
         run: cat ./artifacts/hello.txt
